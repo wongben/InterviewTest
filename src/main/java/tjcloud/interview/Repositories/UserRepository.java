@@ -7,10 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import tjcloud.interview.models.InterviewUser;
 
+/**
+ * 示例Repository层
+ * @author Thinkpad
+ *
+ */
 @Repository
 public interface UserRepository extends JpaRepository<InterviewUser, Integer> {
   public InterviewUser findByEmail(String email);
   
-	@Query(value = "select IFNULL(sum(amount),0) from T_TRANS where  user_id = :userId and  is_paid = 1 and operator <> 'Invoice'", nativeQuery = true)
-	public Integer getTransactionTotalAmountByUserID(@Param("userId") Integer userId);
+	@Query(value = "from InterviewUser where name = :inputName", nativeQuery = true)
+	public InterviewUser getInterviewUserByInputName(@Param("inputName") Integer userId);
 } 
