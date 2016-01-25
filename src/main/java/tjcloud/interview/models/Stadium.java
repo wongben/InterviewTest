@@ -7,6 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 场馆Model
+ * @author WongBen
+ *
+ */
 @Entity
 @Table(name = "D_STADIUM")
 public class Stadium implements Serializable {
